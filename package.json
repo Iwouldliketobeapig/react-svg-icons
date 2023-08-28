@@ -1,0 +1,35 @@
+{
+  "name": "react-svg-icon",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./packages/es/index.js",
+  "scripts": {
+    "start": "tsc && node lib/index.js",
+    "build": "rollup --config ./build/rollup.build.js"
+  },
+  "keywords": [
+    "react",
+    "svg",
+    "icon"
+  ],
+  "author": "dutao",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.4.8",
+    "@types/react": "^18.2.20",
+    "react": "^18.2.0"
+  },
+  "files": [
+    "packages"
+  ],
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@svgr/core": "^8.0.0",
+    "@svgr/plugin-jsx": "^8.0.1",
+    "@svgr/plugin-prettier": "^8.0.1",
+    "@svgr/plugin-svgo": "^8.0.1",
+    "cheerio": "^1.0.0-rc.12",
+    "rollup": "^3.28.0"
+  }
+}
