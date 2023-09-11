@@ -1,5 +1,5 @@
 import typescript from '@rollup/plugin-typescript';
-import inputFun from './input.js';
+import inputFun from './iconsInput.js';
 
 inputFun();
 
@@ -17,5 +17,7 @@ export default {
   plugins: [typescript({
     target: 'es5',
     tsconfig: './tsconfig.icon.json',
-  })]
+    declaration: true,
+  })],
+  external: ['react'],
 }

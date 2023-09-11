@@ -8,6 +8,10 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "typeRoots": ["./node_modules/@types"],
+    "baseUrl": "./",
+    "declaration": true,
+    "declarationDir": "./packages/es",
+    "sourceMap": false
   },
   "exclude": ["**/node_modules", "./svgs"]
 }
