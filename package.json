@@ -4,11 +4,13 @@
   "description": "",
   "type": "module",
   "main": "./packages/es/index.js",
+  "types": "./packages/es/icons",
   "scripts": {
     "dev": "webpack-dev-server --mode development --config ./build/webpack.config.cjs",
     "build:transfer": "tsc && node lib/index.js",
-    "build": "rollup --config ./build/rollup.build.js",
-    "start:demo": "webpack --config ./build/webpack.config.cjs"
+    "build": "tsc && node lib/index.js && rollup --config ./build/rollup.build.js",
+    "start:demo": "webpack --config ./build/webpack.config.cjs",
+    "build:demo": "node ./build/generateDemo.js"
   },
   "keywords": [
     "react",
@@ -20,7 +22,8 @@
   "dependencies": {
     "@types/node": "^20.4.8",
     "@types/react": "^18.2.20",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "files": [
     "packages"
@@ -36,7 +39,13 @@
     "@svgr/plugin-svgo": "^8.0.1",
     "babel-loader": "^9.1.3",
     "cheerio": "^1.0.0-rc.12",
+    "css-loader": "^6.8.1",
+    "ejs": "^3.1.9",
+    "html-webpack-plugin": "^5.5.3",
+    "less": "^4.2.0",
+    "less-loader": "^11.1.3",
     "rollup": "^3.28.0",
+    "style-loader": "^3.3.3",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"

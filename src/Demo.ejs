@@ -1,0 +1,22 @@
+import React from 'react';
+import './demo.less';
+import { <%= icons.join(', ') %> } from '../packages/es';
+
+const Demo = () => {
+  const onClick = (name: string) => {
+    document.execCommand('Copy');
+  }
+
+  return (
+    <ul className="demo"><%
+      icons.forEach(function(item) {%>
+        <li className="icon">
+          <<%= item %> />
+          <span class="icon-desc"><%= item %></span>
+        </li><%})
+    %>
+    </ul>
+  )
+}
+
+export default Demo;

@@ -1,8 +1,6 @@
 import typescript from '@rollup/plugin-typescript';
 import inputFun from './iconsInput.js';
 
-inputFun();
-
 export default {
   input: {
     ...inputFun(),
@@ -10,7 +8,7 @@ export default {
   output: [
     {
       dir: 'packages/es',
-      sourcemap: true,
+      sourcemap: false,
       format: 'es',
     }
   ],

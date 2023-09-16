@@ -15,7 +15,6 @@ export default () => {
   const iconsFilePath = path.resolve(root, iconsPathName)
   const dataDir = readdirSync(iconsFilePath, { withFileTypes: true });
   dataDir?.forEach(ele => {
-    console.log(ele);
     if (ele.isFile()) {
       inputPath[`${getFileName(ele.name)}`] = path.resolve(iconsFilePath, ele.name); 
     }

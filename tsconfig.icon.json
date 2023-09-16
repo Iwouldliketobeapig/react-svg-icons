@@ -10,8 +10,9 @@
     "typeRoots": ["./node_modules/@types"],
     "baseUrl": "./",
     "declaration": true,
-    "declarationDir": "./packages/es",
+    "declarationDir": "./packages/es/icons",
     "sourceMap": false
   },
-  "exclude": ["**/node_modules", "./svgs"]
+  "exclude": ["**/node_modules", "./svgs", "./src", "./index.ts"],
+  "include": ["icons/**/*"],
 }

@@ -1,4 +1,5 @@
 const path = require("node:path")
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -6,17 +7,33 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
   },
-  module: {
-    rules: [{
-      test: /\.tsx/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env', '@babel/preset-react'],
-        }
-      },
-    }],
+  resolve: {
+    extensions: ['.js', '.json', '.tsx'],
   },
+  module: {
+    rules: [
+      {
+        test: /\.less$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'less-loader',
+        ],
+      },
+      {
+        test: /\.tsx/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          }
+        },
+      }
+    ],
+  },
+  plugins: [new HtmlWebpackPlugin({
+    template: 'src/index.html',
+  })],
   devServer: {
     port: 9000,
   },
