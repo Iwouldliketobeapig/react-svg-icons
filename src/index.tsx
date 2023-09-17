@@ -35,6 +35,10 @@ const App = () => {
       </div>
       <h1>已有图标</h1>
       <Demo />
+      <div className="power">
+        <h1>power</h1>
+        <a href="htt">https://github.com/Iwouldliketobeapig/react-svg-icons</a>
+      </div>
     </div>
   )
 }
