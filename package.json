@@ -7,7 +7,7 @@
   "types": "./packages/es/icons",
   "scripts": {
     "dev": "webpack-dev-server --mode development --config ./build/webpack.config.cjs",
-    "transfer": "tsc && node lib/index.js",
+    "transfer": "node lib/index.js",
     "build": "rollup --config ./build/rollup.build.js",
     "demo": "node ./build/generateDemo.js",
     "build:demo": "webpack --mode production --config ./build/webpack.config.cjs",
