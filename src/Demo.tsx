@@ -1,19 +1,23 @@
 import React from 'react';
 import './demo.less';
-import { AddToPerson, Share } from '../packages/es';
+import { AddToPerson, Share } from '../icons';
 
 const Demo = () => {
+  const onClick = (name: string) => {
+    document.execCommand('Copy');
+  }
+
   return (
-    <div className="demo">
+    <ul className="demo">
         <li className="icon">
           <AddToPerson />
-          <span>AddToPerson</span>
+          <span className="icon-desc">AddToPerson</span>
         </li>
         <li className="icon">
           <Share />
-          <span>Share</span>
+          <span className="icon-desc">Share</span>
         </li>
-    </div>
+    </ul>
   )
 }
 

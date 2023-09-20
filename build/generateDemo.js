@@ -14,9 +14,7 @@ function generateDemo () {
     if (err) {
       throw(err);
     }
-    console.log('测试-----', data);
     const tsx = ejs.render(data, { icons });
-    console.log(tsx);
     fs.writeFileSync(path.resolve(cwdPath, 'src/Demo.tsx'), tsx);
   })
 }
