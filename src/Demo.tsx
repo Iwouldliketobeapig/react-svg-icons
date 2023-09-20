@@ -3,10 +3,6 @@ import './demo.less';
 import { AddToPerson, Share } from '../icons';
 
 const Demo = () => {
-  const onClick = (name: string) => {
-    document.execCommand('Copy');
-  }
-
   return (
     <ul className="demo">
         <li className="icon">
