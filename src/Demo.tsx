@@ -1,6 +1,6 @@
 import React from 'react';
 import './demo.less';
-import { AddToPerson, Share } from '../icons';
+import { AddToPerson, Checked, Share } from '../icons';
 
 const Demo = () => {
   return (
@@ -8,6 +8,10 @@ const Demo = () => {
         <li className="icon">
           <AddToPerson />
           <span className="icon-desc">AddToPerson</span>
+        </li>
+        <li className="icon">
+          <Checked />
+          <span className="icon-desc">Checked</span>
         </li>
         <li className="icon">
           <Share />

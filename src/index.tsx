@@ -16,8 +16,10 @@ const App = () => {
       </div> 
       <div className="introduction">
         <h3>引入</h3>
-        <span>{'import { TestIcon } from '} {config.name}</span>
+        <span>{`import { TestIcon } from '${config.name}'`}</span>
       </div>
+      <h1>已有图标</h1>
+      <Demo />
       <div className="introduction">
         <h3>添加新图标</h3>
         <span>
@@ -33,8 +35,6 @@ const App = () => {
         <span>2. 执行npm run dev就可以本地查看所有图标</span>
         <span>3. npm run build:demo然后执行npm run server即可启动一个文档服务</span>
       </div>
-      <h1>已有图标</h1>
-      <Demo />
       <div className="power">
         <h1>power</h1>
         <a href="htt">https://github.com/Iwouldliketobeapig/react-svg-icons</a>
