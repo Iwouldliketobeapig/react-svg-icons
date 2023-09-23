@@ -6,11 +6,11 @@
   "main": "./packages/es/index.js",
   "types": "./packages/es/icons",
   "scripts": {
-    "dev": "webpack-dev-server --mode development --config ./build/webpack.config.cjs",
+    "dev": "node ./build/generateDemo.js & webpack-dev-server --mode development --config ./build/webpack.config.cjs",
     "transfer": "node lib/index.js",
     "build": "rollup --config ./build/rollup.build.js",
     "demo": "node ./build/generateDemo.js",
-    "build:demo": "webpack --mode production --config ./build/webpack.config.cjs",
+    "build:demo": "node ./build/generateDemo.js webpack --mode production --config ./build/webpack.config.cjs",
     "server": "node server/index.js"
   },
   "keywords": [

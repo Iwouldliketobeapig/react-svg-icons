@@ -1,6 +1,6 @@
 import React from 'react';
 import './demo.less';
-import { AddToPerson, Checked, Share } from '../icons';
+import { AddToPerson, Checked, CheckedChecked, Share } from '../icons';
 
 const Demo = () => {
   return (
@@ -12,6 +12,10 @@ const Demo = () => {
         <li className="icon">
           <Checked />
           <span className="icon-desc">Checked</span>
+        </li>
+        <li className="icon">
+          <CheckedChecked />
+          <span className="icon-desc">CheckedChecked</span>
         </li>
         <li className="icon">
           <Share />
