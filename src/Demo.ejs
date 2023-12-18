@@ -1,17 +1,48 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import './demo.less';
 import { <%= icons.join(', ') %> } from '../icons';
+import { message, Popover, Button } from 'antd';
 
 const Demo = () => {
+  const copyRef = useRef<HTMLInputElement>(null);
+  const [value, setValue] = useState<string>();
+
+  const onIcon = (text: string) => {
+    setValue(text);
+    setTimeout(() => {
+      copyRef.current?.select();
+      document.execCommand("copy");
+      message.success(`复制${text}成功`);
+    }, 0);
+  }
+
+  const content = (name: string) => {
+    return (
+      <div>
+        <Button onClick={() => onIcon(name)}>复制图标</Button>
+        <Button onClick={() => onIcon(`import { ${name} } from 'react-icons'`)}>复制引入</Button>
+      </div>
+    );
+  };
+
   return (
-    <ul className="demo"><%
-      icons.forEach(function(item) {%>
-        <li className="icon">
-          <<%= item %> />
-          <span className="icon-desc"><%= item %></span>
-        </li><%})
-    %>
-    </ul>
+    <>
+      <input 
+        style={{ position: "fixed", left: -100000 }}
+        ref={copyRef}
+        value={value}
+      />
+      <ul className="demo"><%
+        icons.forEach(function(item) {%>
+          <Popover content={content("<%= item %>")}>
+            <li className="icon">
+              <<%= item %> />
+              <span className="icon-desc"><%= item %></span>
+            </li>
+          </Popover><%})
+      %>
+      </ul>
+    </>
   )
 }
 
