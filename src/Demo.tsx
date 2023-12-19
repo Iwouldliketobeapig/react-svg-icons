@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import './demo.less';
 import { AddToPerson, Checked, CheckedChecked, Share } from '../icons';
 import { message, Popover, Button } from 'antd';
+import packageInfo from '../package.json';
 
 const Demo = () => {
   const copyRef = useRef<HTMLInputElement>(null);
@@ -20,7 +21,7 @@ const Demo = () => {
     return (
       <div>
         <Button onClick={() => onIcon(name)}>复制图标</Button>
-        <Button onClick={() => onIcon(`import { ${name} } from 'react-icons'`)}>复制引入</Button>
+        <Button onClick={() => onIcon(`import { ${name} } from '${packageInfo.name}'`)}>复制引入</Button>
       </div>
     );
   };
