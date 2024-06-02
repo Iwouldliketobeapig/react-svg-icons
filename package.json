@@ -10,7 +10,7 @@
     "transfer": "node lib/index.js",
     "build": "rollup --config ./build/rollup.build.js",
     "demo": "node ./build/generateDemo.js",
-    "build:demo": "node ./build/generateDemo.js webpack --mode production --config ./build/webpack.config.cjs",
+    "build:demo": "node ./build/generateDemo.js & webpack --mode production --config ./build/webpack.config.cjs",
     "server": "node server/index.js"
   },
   "keywords": [
@@ -44,6 +44,8 @@
     "html-webpack-plugin": "^5.5.3",
     "less": "^4.2.0",
     "less-loader": "^11.1.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^3.28.0",

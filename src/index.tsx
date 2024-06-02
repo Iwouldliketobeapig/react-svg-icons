@@ -1,12 +1,11 @@
 import React from "react";
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import Demo from './Demo';
 import './index.less';
 import config from '../package.json';
+import 'normalize.css';
 
 const App = () => {
-  console.log(config);
-
   return (
     <div className="box">
       <h1>使用方法</h1>
@@ -43,5 +42,6 @@ const App = () => {
   )
 }
 
-const root = document.getElementById('root');
-render(<App />, root);
+const rootNode = document.getElementById('root');
+const root = createRoot(rootNode);
+root.render(<App />);
