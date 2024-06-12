@@ -10,7 +10,7 @@ function generateDemo () {
   const iconsObj = iconsInput();
   delete iconsObj.index;
   const icons = Object.keys(iconsObj);
-  fs.readFile(path.resolve(cwdPath, 'src/Demo.ejs'), 'utf8', function(err, data) {
+  fs.readFile(path.resolve(cwdPath, 'src/templates/Demo.ejs'), 'utf8', function(err, data) {
     if (err) {
       throw(err);
     }

@@ -17,10 +17,12 @@ module.exports = {
         test: /\.less|css$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          // 'style-loader',
           'css-loader',
           'less-loader',
         ],
+        options: {
+          modules: true,
+        },
       },
       {
         test: /\.tsx/,
@@ -40,5 +42,6 @@ module.exports = {
     new MiniCssExtractPlugin()],
   devServer: {
     port: 9000,
+    historyApiFallback: true,
   },
 }
